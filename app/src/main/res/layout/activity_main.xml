@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,110 +8,112 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Финансовые результаты -->
-
-    <!-- Финансовые затраты -->
-
-    <!-- Ставка дисконтирования -->
-
+    <!-- Строка "Финансовые результаты" и поле ввода -->
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="88dp"
-        android:text="Финансовые результаты"
+        android:id="@+id/textViewResults"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:text="@string/textViewResultsString"
+        app:layout_constraintEnd_toStartOf="@+id/editTextResults"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextResults"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:inputType="numberDecimal"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/textViewResults"
+        app:layout_constraintTop_toTopOf="@id/textViewResults"
+        tools:ignore="LabelFor" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
+        android:id="@+id/textViewCosts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Финансовые затраты"
+        android:padding="8dp"
+        android:text="@string/textViewCostsString"
+        app:layout_constraintEnd_toStartOf="@+id/editTextCosts"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@id/textViewResults" />
 
     <EditText
         android:id="@+id/editTextCosts"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:inputType="numberDecimal"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextResults" />
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/textViewCosts"
+        app:layout_constraintTop_toTopOf="@id/textViewCosts"
+        tools:ignore="LabelFor" />
 
     <TextView
+        android:id="@+id/textViewDiscountRate"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:text="Ставка дисконтирования"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewDiscountRateString"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextCosts"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textViewDiscountRate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
 
         <RadioButton
             android:id="@+id/radio35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="35" />
+            android:text="@string/Radio35" />
 
         <RadioButton
             android:id="@+id/radio17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="17" />
+            android:text="@string/Radio17" />
 
         <RadioButton
             android:id="@+id/radio64"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="64" />
+            android:text="@string/Radio64" />
     </RadioGroup>
 
     <Button
         android:id="@+id/buttonCalculate"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Расчет"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:text="@string/buttonCalculateString"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.691" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

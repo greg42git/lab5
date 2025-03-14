@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">lab5</string>
+    <string name="textViewResultsString">Финансовые результаты</string>
+    <string name="textViewCostsString">Финансовые затраты</string>
+    <string name="textViewDiscountRateString">Ставка дисконтирования</string>
+    <string name="Radio35">35</string>
+    <string name="Radio17">17</string>
+    <string name="Radio64">64</string>
+    <string name="buttonCalculateString">Расчет</string>
 </resources>
